@@ -1,12 +1,12 @@
 on:
   workflow_dispatch:
-jobs:
-  destroy:
-    runs-on: ubuntu-latest
     inputs:
       project:
         description: 'Digger project to perform destroy on'
-        required: true  
+        required: true
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
     steps:
     - name: digger destroy
       uses: diggerhq/digger@feat/destroy
