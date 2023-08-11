@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: digger destroy
-      uses: diggerhq/digger@feat/destroy
+      uses: diggerhq/digger@develop
       with:
         mode: manual
         command: "digger destroy"
