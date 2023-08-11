@@ -3,13 +3,17 @@ on:
 jobs:
   destroy:
     runs-on: ubuntu-latest
+    inputs:
+      project:
+        description: 'Digger project to perform destroy on'
+        required: true  
     steps:
     - name: digger destroy
       uses: diggerhq/digger@feat/destroy
       with:
         mode: manual
         command: "digger destroy"
-        project: "dev"
+        project: "${{ inputs.project }}"
         setup-aws: true
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
